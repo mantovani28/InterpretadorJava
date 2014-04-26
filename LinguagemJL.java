@@ -15,7 +15,9 @@ class LinguagemJL{
 		Scanner leitor;
 		
         // criando o interpretador
-        //Interpretador interpretador;
+        Interpretador interpretador;
+        
+        //criando vetor de String, para armazenar todas as linhas de codigo. 
         String linhas[] = new String[2000]; // arquivo pode ter, no máximo, 2000 linhas.
         
         try {
@@ -27,7 +29,7 @@ class LinguagemJL{
             leitor = new Scanner(arquivo);
             System.out.println("Arquivo lido com sucesso");
             // Instanciamos o interpretador.
-			//interpretador = new Interpretador();
+			interpretador = new Interpretador();
             
             // Lemos todas as linhas do arquivo para dentro do
             // vetor "linhas".
@@ -39,7 +41,7 @@ class LinguagemJL{
             
             // Inicializamos o interpretador com o vetor de linhas. A partir
             // desse ponto, o objeto "b" irá interpretar o código lido do arquivo.
-            //b.interpreta(linhas);
+            interpretador.interpreta(linhas);
 			
         } catch (Exception e) {
             System.out.println("Nao consegui ler o arquivo: " + (args.length > 0 ? args[0] : "(desconhecido)"));
